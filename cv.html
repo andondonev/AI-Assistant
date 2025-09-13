@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andon Donev - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(0,0,0,0.02) 30%, rgba(0,0,0,0.02) 70%, transparent 70%),
+                linear-gradient(-45deg, transparent 30%, rgba(0,0,0,0.02) 30%, rgba(0,0,0,0.02) 70%, transparent 70%);
+            background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+            background-position: 0 0, 0 0, 0 0, 0 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23764ba2' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 60px 60px, 40px 40px;
+            background-position: 0 0, 20px 20px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            min-height: 85vh;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 2;
+        }
+
+        .cv-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f8f9fa'%3E%3Cpath d='M50 50c0-27.614-22.386-50-50-50v50h50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.01'%3E%3Cpath d='M100 100c0-55.228-44.772-100-100-100v100h100z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: 100px 100px, 200px 200px;
+            background-position: 0 0, 50px 50px;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 40px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.05), transparent);
+            border-radius: 0 0 0 100px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .profile-image::before {
+            content: '👨‍💼';
+            font-size: 0.6em;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff, #ecf0f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-top: auto;
+        }
+
+        .contact-section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .contact-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            font-size: 0.95em;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding-left: 8px;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            font-size: 0.8em;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 50px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-16.569-13.431-30-30-30v30h30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23764ba2' fill-opacity='0.02'%3E%3Cpath d='M50 50c0-27.614-22.386-50-50-50v50h50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.03'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23764ba2' fill-opacity='0.02'%3E%3Cpath d='M40 40c0-22.091-17.909-40-40-40v40h40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: 60px 60px, 100px 100px, 40px 40px, 80px 80px;
+            background-position: 0 0, 30px 30px, 20px 20px, 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .main-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.015'%3E%3Cpath d='M60 60c0-33.137-26.863-60-60-60v60h60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23764ba2' fill-opacity='0.01'%3E%3Cpath d='M100 100c0-55.228-44.772-100-100-100v100h100z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                linear-gradient(45deg, transparent 48%, rgba(102, 126, 234, 0.02) 49%, rgba(102, 126, 234, 0.02) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(118, 75, 162, 0.02) 49%, rgba(118, 75, 162, 0.02) 51%, transparent 52%);
+            background-size: 120px 120px, 200px 200px, 20px 20px, 20px 20px;
+            background-position: 0 0, 50px 50px, 0 0, 10px 10px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M15 15c0-8.284-6.716-15-15-15v15h15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23764ba2' fill-opacity='0.015'%3E%3Cpath d='M25 25c0-13.807-11.193-25-25-25v25h25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.03'%3E%3Ccircle cx='10' cy='10' r='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: 30px 30px, 50px 50px, 20px 20px;
+            background-position: 0 0, 15px 15px, 10px 10px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            letter-spacing: 1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: #667eea;
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #e9ecef, transparent);
+            margin-left: 15px;
+        }
+
+        .section-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+
+        .job-entry, .achievement-entry, .education-entry {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fafbfc;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #e9ecef;
+        }
+
+        .job-entry:hover, .achievement-entry:hover, .education-entry:hover {
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+            border-left-color: #5a67d8;
+        }
+
+        .job-entry::before, .achievement-entry::before, .education-entry::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 6px;
+            height: 6px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+
+        .job-title, .achievement-title, .education-title {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .job-icon, .achievement-icon, .education-icon {
+            margin-right: 10px;
+            font-size: 1.1em;
+            color: #667eea;
+        }
+
+        .job-subtitle, .achievement-subtitle, .education-subtitle {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .job-dates, .achievement-dates, .education-dates {
+            font-style: italic;
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .job-tasks, .achievement-tasks, .education-courses {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-tasks li, .achievement-tasks li, .education-courses li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: #34495e;
+            transition: all 0.3s ease;
+        }
+
+        .job-tasks li:hover, .achievement-tasks li:hover, .education-courses li:hover {
+            color: #2c3e50;
+            transform: translateX(5px);
+        }
+
+        .job-tasks li::before, .achievement-tasks li::before, .education-courses li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.8em;
+            top: 2px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-tag:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                flex-direction: column;
+                margin: 10px;
+            }
+            
+            .sidebar {
+                width: 100%;
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image"></div>
+                <div class="name">Andon Donev</div>
+                <div class="title">Senior Customer Experience Associate - Social Media</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-section-title">Contact Info</div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>andon.donev95@yahoo.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div>+359899410999</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>Sofia, BUL</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div>linkedin.com/in/andondonev</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content">
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-briefcase section-icon"></i>
+                        Work Experience
+                    </div>
+                    
+                    <div class="job-entry">
+                        <div class="job-title">
+                            <i class="fas fa-chart-line job-icon"></i>
+                            SCEA (Social Media) at Crypto.com
+                        </div>
+                        <div class="job-dates">03/2025 - Present</div>
+                        <div class="job-subtitle">Account surveying, Debit card disputes, Suspicious Activity, Calls</div>
+                        <ul class="job-tasks">
+                            <li>Mainstream monitoring of public volume and engagement with posts, reviews, comments, and queries on the brand's social media channels;</li>
+                            <li>Securely maintaining and analyzing account data, use of various software applications (Jira, Confluence, OPS), reporting suspicious and specific inquiries;</li>
+                            <li>Correspondence with company's internal teams on behalf of the customers on all levels;</li>
+                            <li>Account security provisioning for compromised accounts and fraud reports;</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">
+                            <i class="fas fa-users job-icon"></i>
+                            CEA at Crypto.com
+                        </div>
+                        <div class="job-dates">05/2021 - 03/2025</div>
+                        <div class="job-subtitle">Achievements/Tasks</div>
+                        <ul class="job-tasks">
+                            <li>Maintaining customers satisfaction and quality assurance rate ≥ 95%;</li>
+                            <li>Swiftly following of process updates on a weekly basis; Overcoming the set KPIs conquered by the workload volatility;</li>
+                            <li>Product knowledge and accuracy in reporting (11/2021 - Present);</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-trophy section-icon"></i>
+                        Achievements
+                    </div>
+                    
+                    <div class="achievement-entry">
+                        <div class="achievement-title">
+                            <i class="fas fa-shield-alt achievement-icon"></i>
+                            Social Media SCEA, proficiency in POS systems, disputes, calls, suspicious activity;
+                        </div>
+                        <div class="achievement-dates">(03/2025 - Present)</div>
+                        <ul class="achievement-tasks">
+                            <li>Mainstream customer support and public interaction oversight;</li>
+                            <li>Cardholder service, retail customers; Transactions survey; Account securing/via chat and phone/; Reporting of fraudulent activity, scams, potential threats, process improvements;</li>
+                        </ul>
+                    </div>
+
+                    <div class="achievement-entry">
+                        <div class="achievement-title">
+                            <i class="fas fa-graduation-cap achievement-icon"></i>
+                            Upskilled in POS systems, disputes, calls, suspicious activity;
+                        </div>
+                        <div class="achievement-dates">(11/2021 - Present)</div>
+                        <ul class="achievement-tasks">
+                            <li>Service for cardholders, retail customers; Transactions survey, Account securing/via chat and phone/, reporting of fraudulent activity, scams, potential threats, business proposals, process improvements;</li>
+                        </ul>
+                    </div>
+
+                    <div class="achievement-entry">
+                        <div class="achievement-title">
+                            <i class="fas fa-share-alt achievement-icon"></i>
+                            Social Media CEA
+                        </div>
+                        <div class="achievement-dates">(01/2024 - 03/2025)</div>
+                        <div class="achievement-tasks">
+                            <div>Attract public volume and engaging in posts, reviews, comments and queries on brand's social media channels mainstream.</div>
+                        </div>
+                    </div>
+
+                    <div class="achievement-entry">
+                        <div class="achievement-title">
+                            <i class="fas fa-rocket achievement-icon"></i>
+                            Getting into the role
+                        </div>
+                        <div class="achievement-dates">(05/2021 - 11/2021)</div>
+                        <div class="achievement-tasks">
+                            <div>Customer experience associate - probation period</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-cogs section-icon"></i>
+                        Skills
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-tag">🤖 AI, LLM, Prompt Engineering</div>
+                        <div class="skill-tag">☁️ Cloud Computing Fundamentals</div>
+                        <div class="skill-tag">🔍 Troubleshooting, Investigation, Analytics</div>
+                        <div class="skill-tag">📊 Reporting</div>
+                        <div class="skill-tag">🛡️ Security Monitoring Basics</div>
+                        <div class="skill-tag">🌐 Basic Networking Concepts</div>
+                        <div class="skill-tag">👥 Team Player</div>
+                        <div class="skill-tag">💻 Windows/Linux Basics</div>
+                        <div class="skill-tag">🐍 Python Basics</div>
+                        <div class="skill-tag">📚 Self Education</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-graduation-cap section-icon"></i>
+                        Education
+                    </div>
+                    
+                    <div class="education-entry">
+                        <div class="education-title">
+                            <i class="fas fa-code education-icon"></i>
+                            Software University SoftUni
+                        </div>
+                        <div class="education-dates">01/2023 - 03/2024</div>
+                        <ul class="education-courses">
+                            <li>Programing Basics with Python</li>
+                            <li>Linux System Administration</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-entry">
+                        <div class="education-title">
+                            <i class="fas fa-brain education-icon"></i>
+                            AI SoftUni
+                        </div>
+                        <div class="education-dates">08/2025 - Present</div>
+                        <ul class="education-courses">
+                            <li>Prompt Engineering</li>
+                            <li>Implementing AI in Business</li>
+                            <li>AI for Education and Self-Education</li>
+                            <li>AI Automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
