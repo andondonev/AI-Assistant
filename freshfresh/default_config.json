@@ -1,0 +1,9 @@
+{
+  "trade_amount": 5.0,
+  "slippage": 0.5,
+  "min_price_change": 2.0,
+  "max_daily_trades": 10,
+  "max_trade_amount": 1000,
+  "min_balance_threshold": 50,
+  "signal_check_interval": 60
+}
